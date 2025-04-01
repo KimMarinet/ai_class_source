@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>게시글 작성</title>
+    </head>
+    <body>
+        <h1>게시글 작성</h1>
+        <form method="post" action="board_ps.html">
+            <select name="writingOption" size="1">
+                <option value="Q&A">Q&A</option>
+                <option value="Buy&Sell">Buy&Sell</option>
+                <option value="Freetalk">Freetalk</option>
+            </select>
+            <dl>
+                <dt>제목</dt>
+                <dd>
+                    <input type="text" name="title" required placeholder="제목을 입력하세요">
+                </dd>
+                <dt>작성자</dt>
+                <dd>
+                    <input type="text" name="userName" readonly value="계정 내 이름 정보 표기 구역">
+                </dd>
+                <dt>내용</dt>
+                <dd>
+                    <textarea name="content" placeholder="본문" rows="7" cols="100"></textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>✔ 이미지 첨부</dt>
+                <dd>
+                    <input type="file" name="imageFiles" accept="image/*">
+                </dd>
+                <dt>✔ 파일 첨부</dt>
+                <dd>
+                    <input type="file" name="attach" multiple>
+                </dd>
+            </dl>
+            <button type="submit">게시</button>
+        </form>
+    </body>
+</html>
