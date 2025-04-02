@@ -1,0 +1,8 @@
+.menu5 ~ li{
+    /*형제 선택자*/
+    background: gray;
+}
+.menu5 + li{
+    /*인접 형제 선택자*/
+    background: orange;
+}

@@ -1,0 +1,14 @@
+a[href^= 'https']{
+    background: gray;
+}
+a[href$= '.net']{
+    color: greenyellow;
+}
+a[href*= 'daum']{
+    background: orange;
+}
+a{
+    div{
+        background: pink;
+    }
+}

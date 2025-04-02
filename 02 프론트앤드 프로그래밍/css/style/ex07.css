@@ -1,0 +1,28 @@
+h1, a, .content{
+    color: green;
+}
+header nav{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background-color: #060b24;
+    padding-bottom: 18px;
+    z-index: 2;
+}
+header nav > ul {
+    float: left;
+}
+header nav > li {
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 0 4px;
+    float: right;
+    border-left: 2px solid cyan;
+    list-style-type:none;
+}
+header nav > ul > li {
+    float: left;
+    padding: 0 60px;
+    font-size: 18px;
+    margin-top: 20px;
+}
