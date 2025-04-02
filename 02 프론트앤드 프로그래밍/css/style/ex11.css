@@ -1,0 +1,25 @@
+html{
+    font-size: 13px; /* 1rem = 13px */
+}
+.font1{
+    font-size: 1rem;
+    color: rgb(181, 178, 255);
+}
+.font2{
+    font-size: 2rem;
+}
+.font3{
+    font-size: 3rem;
+}
+.font4{
+    font-size: 25px;
+}
+
+.font4 span{
+    font-size: 3em;
+}
+.box{
+    width: 300px;
+    height: 300px;
+    background : rgba(0,0,0,0.5);
+}

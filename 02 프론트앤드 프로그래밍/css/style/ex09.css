@@ -1,0 +1,25 @@
+/*ul li:first-child{
+
+
+    background: red;
+}
+ul li:last-child{
+    backg
+*/
+/*ul li:nth-child(1), ul :nth-child(5), ul :nth-child(7) ,ul :nth-child(9){
+    
+       background:  gray;
+}
+ul li:nth-child(2n+1){
+    background-color: aqua;
+}*/
+/*ul li:nth-of-type(2n+1){
+    background: gray;
+}*/
+/*ul li:not(.menu5){
+    background: greenyellow;
+}*/
+ul::before{
+    background: red;
+    content: 'ㅁㄴㅇ';
+}

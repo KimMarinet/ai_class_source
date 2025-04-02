@@ -1,0 +1,11 @@
+ul li{
+    background: green;
+    /* 조상 자손 선택자*/
+}
+ol span{
+    color: red;
+}
+.menu > span{
+    background: orange;
+    /* 부모 자식 선택자(명확하게 명시) */
+}

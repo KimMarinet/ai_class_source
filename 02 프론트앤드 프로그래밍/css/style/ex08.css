@@ -1,0 +1,16 @@
+.input-txt:focus{
+    background: yellow;
+}
+.box{
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    background: orange;
+    transition: all 0.7s;
+}
+.box:hover{
+    width: 200px;
+    height: 200px;
+    background: gray;
+    transform: rotate(270deg);
+}
