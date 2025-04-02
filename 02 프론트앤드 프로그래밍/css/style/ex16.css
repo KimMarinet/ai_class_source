@@ -1,0 +1,25 @@
+.box{
+    width: 100px;
+    height: 100px;
+    /*padding: 30px;*/
+    margin: 30px;
+    /*float: left;*/
+}
+.box.box1{
+    background: orange;
+    /*display: inline;*/
+    display: inline-block;
+}
+.box2{
+    background: red;
+    /*display: inline;*/
+    display: inline-block;
+}
+.box3{
+    background: greenyellow;
+    display: none;
+}
+.box4{
+    background: violet;
+    display: block;
+}
