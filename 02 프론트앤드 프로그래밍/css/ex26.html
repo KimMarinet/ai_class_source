@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <style>
+            .box{
+                width: 100px;
+                height: 100px;
+                
+                background: orange;
+
+                /*transition-property: width, height, opacity;
+                transition-duration: 1s;
+                transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+                transition-delay: 3s;*/
+
+                transition: all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) 3s;
+                opacity: 0.5;
+            }
+
+            .box:hover{
+                width: 200px;
+                height: 200px;               
+                opacity: 1; 
+            }
+        </style>
+
+        <div class="box"></div>
+    </body>
+</html>

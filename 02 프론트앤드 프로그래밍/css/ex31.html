@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <style>
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                height: 100px;
+                display: flex;
+                background: #ccc;
+                flex-wrap: wrap;
+            }
+            li{
+                width: 0;
+            }
+            li:nth-of-type(3n+1){
+                background: red;
+                flex-grow: 1;
+            }
+            li:nth-of-type(3n+2){
+                background: blue;
+                flex-grow: 1;
+            }
+            li:nth-of-type(3n+3){
+                background: green;
+                flex-grow: 1;
+            }
+        </style>
+
+        <ul class="flex1">
+            <li>메뉴 1</li>
+            <li>메뉴 2메뉴 2메뉴 2메뉴 2메뉴 2메뉴 2메뉴 2메뉴 2메뉴 2메뉴 2메뉴 2메뉴 2메뉴 2메뉴 2</li>
+            <li>메뉴 3</li>
+        </ul>
+    </body>
+</html>
