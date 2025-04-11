@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.addEventListener("DOMContentLoaded", function(){
+            const person = {
+                name : '이름',
+                age: 40,
+                handleEvent(){
+                    console.log(this);
+                }
+            };
+            const button = document.getElementById("button");
+            button.addEventListener("click", person);
+        });
+    </script>
+    <button type="button" id="button">
+        클릭
+    </button>
+</body>
+</html>

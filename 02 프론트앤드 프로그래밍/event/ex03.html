@@ -35,8 +35,12 @@
             });
             box3.addEventListener("click", function(event){
                 console.log("box3 clicked");
-                console.log("event : ", event);
-                event.stopPropagation(); // 이벤트 전파 차단
+                //console.log("event : ", event);
+                //event.stopPropagation(); // 이벤트 전파 차단
+                event.stopImmediatePropagation(); // 이벤트 전파의 즉시 차단
+            });
+            box3.addEventListener("click", function(){
+                console.log("box3 clicked2");
             });
         });
     </script>
