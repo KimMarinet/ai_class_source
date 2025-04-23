@@ -1,7 +1,8 @@
 package exam02;
 
-public class Animal {
-    protected void move(){
+public abstract class Animal {
+    /*protected void move(){
         System.out.println("무~빙!");
-    }
+    }*/
+    protected abstract void move();
 }

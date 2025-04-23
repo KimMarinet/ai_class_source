@@ -1,13 +1,13 @@
 package exam02;
 
-public class Human extends Animal{
+public final class Human extends Animal{
     @Override
     public void move() {
-        super.move();
+        //super.move();
         System.out.println("직립 무빙");
     }
 
-    public void reading(){
+    public final void reading(){
         System.out.println("독서");
     }
 }
