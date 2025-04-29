@@ -1,6 +1,7 @@
 package exam01;
 
 import java.lang.reflect.Constructor;
+import java.util.Arrays;
 
 public class Ex02 {
     public static void main(String[] args) throws Exception{
@@ -9,17 +10,19 @@ public class Ex02 {
         MyAnno myAnno = cls.getAnnotation(MyAnno.class);
 
         int min = myAnno.min();
-        int max = myAnno.max();
+        int[] max = myAnno.max();
 
         System.out.println(min);
-        System.out.println(max);
+        System.out.println(Arrays.toString(max));
 
         Constructor<Ex01> con = cls.getDeclaredConstructor(new Class[] {});
         MyAnno myAnno2 = con.getAnnotation(MyAnno.class);
 
         int min2 = myAnno2.min();
-        int max2 = myAnno2.max();
+        int[] max2 = myAnno2.max();
+        String value = myAnno2.value();
 
-        System.out.printf("%d, %d", min2, max2);
+        System.out.printf("%d, %s%n", min2, Arrays.toString(max2));
+        System.out.println(value);
     }
 }
