@@ -1,25 +1,34 @@
-package exam05;
+package exam02;
 
 public class Book {
-    private int isbn;
+    private int idbn;
     private String title;
     private String author;
-    private String pulisher;
 
-    public Book(int isbn, String title, String author, String pulisher) {
-        this.isbn = isbn;
+    public Book(int idbn, String title, String author) {
+        this.idbn = idbn;
         this.title = title;
         this.author = author;
-        this.pulisher = pulisher;
+    }
+
+    public int getIdbn() {
+        return idbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "isbn=" + isbn +
+                "idbn=" + idbn +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", pulisher='" + pulisher + '\'' +
                 '}';
     }
 }

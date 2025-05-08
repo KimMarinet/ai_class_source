@@ -10,10 +10,10 @@ public class Ex02 {
 
         for(Animal a : animals){
             a.move();
-            if(a instanceof Human){
+            /*if(a instanceof Human){
                 Human h1 = (Human) a;
                 h1.reading();
-            }
+            }*/
         }
     }
 }
