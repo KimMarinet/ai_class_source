@@ -1,0 +1,33 @@
+package org.koreait.controllers;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class BoardController extends HttpServlet {
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        resp.setContentType("text/html; charset=UTF-8;");
+
+        PrintWriter out = resp.getWriter();
+        out.print("<h1>게시글 작성</h1>");
+        out.print("<form method ='POST' action='board'> ");
+        out.print("제목 : <input type = 'text' name = 'subject'><br>");
+        out.print("내용 : <textarea name = 'content'></textarea><br>");
+        out.print("<button type = 'submit'>작성하기</button>");
+        out.print("</form>");
+    }
+
+    @Override
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8"); // 최신 버전은 괜찮지만 옛 버전은  이렇게 명시 필요!
+        String subject = req.getParameter("subject");
+        String content = req.getParameter("content");
+        System.out.printf("subject : %s, content : %s", subject, content);
+    }
+}
