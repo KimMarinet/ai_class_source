@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//@ManualBean
 @Repository
 public class MemberDao {
     private Map<String, MemberVO> members = new HashMap<>();

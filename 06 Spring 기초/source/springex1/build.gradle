@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.aspectj:aspectjweaver:1.9.24'
     implementation 'org.springframework:spring-context:6.2.6'
     compileOnly 'org.projectlombok:lombok:1.18.38'
     testCompileOnly 'org.projectlombok:lombok:1.18.38'

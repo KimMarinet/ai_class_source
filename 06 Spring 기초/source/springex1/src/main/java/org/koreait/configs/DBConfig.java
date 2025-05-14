@@ -6,7 +6,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class DBConfig {
-
+    /*
+    @Bean
+    public MemberDao memberDao(){
+        System.out.println("수동 등록 빈");
+        return new MemberDao();
+    }
+    */
     @Bean
     public Greeter dataSource(){
         return new Greeter();
