@@ -1,4 +1,4 @@
-package org.koreait.porxy;
+package org.koreait.proxy;
 
 public class PerformCalculator implements Calculator{
     private Calculator calculator;

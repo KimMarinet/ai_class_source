@@ -1,4 +1,4 @@
-package org.koreait.porxy;
+package org.koreait.proxy;
 
 public class ImpCalculator implements Calculator{
     @Override

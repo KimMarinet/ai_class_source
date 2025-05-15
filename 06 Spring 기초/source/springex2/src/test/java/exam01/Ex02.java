@@ -1,10 +1,10 @@
 package exam01;
 
 import org.junit.jupiter.api.Test;
-import org.koreait.porxy.Calculator;
-import org.koreait.porxy.ImpCalculator;
-import org.koreait.porxy.PerformCalculator;
-import org.koreait.porxy.RecCalculator;
+import org.koreait.proxy.Calculator;
+import org.koreait.proxy.ImpCalculator;
+import org.koreait.proxy.PerformCalculator;
+import org.koreait.proxy.RecCalculator;
 
 public class Ex02 {
     @Test
