@@ -8,5 +8,8 @@ public class RequestJoin {
     private String password;
     private String confirmPassword;
     private String name;
+    private String mobile;
     private boolean agree;
+
+    private RequestAddress addr;
 }

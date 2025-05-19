@@ -1,45 +1,30 @@
 package org.koreait.member.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/member")
 public class MemberController {
 
-    @GetMapping("/member/join")
-    public String joinPage(){
+    // MemberController에서 공통으로 공유할 수 있는 속성
+    @ModelAttribute("commonTitle")
+    public String commonTitle(){
+        return "회원 공통 제목...";
+    }
+
+    @GetMapping("/join")
+    public String Join(@ModelAttribute RequestJoin form){
         return "member/join";
     }
 
-    @PostMapping("member/join")
-    public String JoinPs(RequestJoin2 form){
-        System.out.println(form);
-        return "member/join_ps";
-//            @RequestParam(name = "email", defaultValue = "기본 이메일...") String email,
-//            @RequestParam(name = "agree", required = false) Boolean agree){
-//        System.out.println("POST 요청 유입...");
-//        System.out.println(email);
-//        System.out.println(agree);
-//        return "member/join_ps";
-    }
+    @PostMapping("/join")
+    public String JoinPs(RequestJoin form) {
 
-//    @GetMapping("/member/register")
-//    public String joinPage(@RequestParam("agree") boolean agree,
-//                           @RequestParam("email") String email,
-//                           Model model){
-//        System.out.println(email);
-//        System.out.println(agree);
-//        model.addAttribute("message", "안녕하세요");
-//
-//        return "member/join";
-//    }
-//    @GetMapping("member/register")
-//    public ModelAndView joinPage(){
-//        ModelAndView mv = new ModelAndView();
-//        mv.addObject("message", "안녕하세요.");
-//        mv.setViewName("member/join");
-//
-//        return mv;
-//    }
+        return "member/join";
+    }
 }

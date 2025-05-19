@@ -2,14 +2,15 @@ package org.koreait.global.configs;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan("org.koreait")
-@Import(ControllerConfig.class)
-public class MVCConfig implements WebMvcConfigurer {
+public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -19,12 +20,5 @@ public class MVCConfig implements WebMvcConfigurer {
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("/WEB-INF/templates/", ".jsp");
-    }
-
-    // 컨트롤러 생성 없이 주소와 템플릿 을 연동하는 설정
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/company")
-                .setViewName("company/main");
     }
 }
