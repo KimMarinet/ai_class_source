@@ -16,7 +16,7 @@ public class Member2Controller {
     }
 
     @PostMapping("/join")
-    public String JoinPs(RequestJoin form, Model model){
+    public String JoinPs(RequestJoin3 form, Model model){
 
         model.addAttribute("requestJoin", form);
 
