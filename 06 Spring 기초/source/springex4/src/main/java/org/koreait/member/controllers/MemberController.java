@@ -1,15 +1,20 @@
 package org.koreait.member.controllers;
 
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.koreait.member.service.JoinService;
+import org.koreait.member.validators.JoinValidator;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/member")
+@RequiredArgsConstructor
 public class MemberController {
+
+    private final JoinValidator joinValidator;
+    private final JoinService joinService;
 
     // MemberController에서 공통으로 공유할 수 있는 속성
     @ModelAttribute("commonTitle")
@@ -23,8 +28,31 @@ public class MemberController {
     }
 
     @PostMapping("/join")
-    public String JoinPs(RequestJoin form) {
+    public String JoinPs(@Valid RequestJoin form, Errors errors) {
 
-        return "member/join";
+        joinValidator.validate(form, errors);
+
+        //검증 실패
+        if (errors.hasErrors()){
+            return "member/join";
+        }
+
+        //회원 가입 검증 성공, 가입 처리
+        joinService.process(form);
+
+        //회원 가입 후 로그인 페이지로 이동
+        return "redirect:/member/login";
+        //버퍼만 바꿈
+        //return "forward:/member/login";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "member/login";
+    }
+
+    @PostMapping("/login")
+    public String loginPs(){
+        return "member/login";
     }
 }
