@@ -14,6 +14,7 @@
 </spring:message>
 
 <form:form action="${action}" modelAttribute="requestJoin">
+    <form:errors />
     <dl>
         <dt>
             <spring:message code="email" />
