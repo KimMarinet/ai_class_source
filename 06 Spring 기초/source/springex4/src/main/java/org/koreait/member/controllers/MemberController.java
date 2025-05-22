@@ -3,8 +3,11 @@ package org.koreait.member.controllers;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.koreait.member.service.JoinService;
+import org.koreait.member.service.LoginService;
 import org.koreait.member.validators.JoinValidator;
+import org.koreait.member.validators.LoginValidator;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +18,9 @@ public class MemberController {
 
     private final JoinValidator joinValidator;
     private final JoinService joinService;
+
+    private final LoginValidator loginValidator;
+    private final LoginService loginService;
 
     // MemberController에서 공통으로 공유할 수 있는 속성
     @ModelAttribute("commonTitle")
@@ -47,12 +53,33 @@ public class MemberController {
     }
 
     @GetMapping("/login")
-    public String login(){
+    public String login(RequestLogin form, @CookieValue(name="savedEmail", required = false) String email){
+
+        if (email!=null){
+            form.setEmail(email);
+            form.setSaveEmail(true);
+        }
+
         return "member/login";
     }
 
     @PostMapping("/login")
-    public String loginPs(){
-        return "member/login";
+    public String loginPs(@Valid RequestLogin form, Errors errors){
+
+        //검증 단계
+        loginValidator.validate(form, errors);
+
+        if(errors.hasErrors()){
+            return  "member/login";
+        }
+
+        // 검증 성공 시 로그인 처리
+
+        loginService.process(form);
+
+        //로그인 성공 시 이동
+        String redirectUrl = form.getRedirectUrl();
+
+        return "redirect:" + (StringUtils.hasText(redirectUrl) ? redirectUrl : "/");
     }
 }
