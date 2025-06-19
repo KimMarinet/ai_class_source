@@ -6,11 +6,12 @@
 //  );
 //}
 
+import Counter2 from "./src/components/Counter2";
 import Todo from "./src/components/Todo";
 
 const App = () =>{
     return (
-      <Todo/>
+      <Counter2/>
   );
 }
 export default App;
