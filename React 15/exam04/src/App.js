@@ -7,11 +7,12 @@
 //}
 
 import Counter2 from "./src/components/Counter2";
+import Counter3 from "./src/components/Counter3";
 import Todo from "./src/components/Todo";
 
 const App = () =>{
     return (
-      <Counter2/>
+      <Counter3/>
   );
 }
 export default App;
