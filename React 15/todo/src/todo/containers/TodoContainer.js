@@ -55,7 +55,11 @@ const TodoContainer = () => {
 
   // 스케줄 하나 삭제 처리
   const onRemove = (id) => {
-    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    //setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    const index = items.findIndex(item => item.id === id);
+    setItems(produce(draft => {
+      draft.splice(index, 1, 0);
+    }));
   };
 
   // 선택 스케쥴 일괄 삭제 처리
