@@ -1,0 +1,59 @@
+@import './styles/utils.scss';
+
+$red: #fa5252;
+$orange: #fd7e14;
+$yellow: #fcc419;
+$green: #40c057;
+$blue: #339af0;
+$indigo: #5c7cfa;
+$violet: #7950f2;
+
+@mixin square($ratio){
+    $result: 32px * $ratio;
+    width: $result;
+    height: $result;
+}
+
+.SassComponent{
+    display: flex;
+    .box {
+        background: gray;
+        width: 32px;
+        height: 32px;
+
+        &.red{
+            background: $red;
+            @include square(1);
+        }
+
+        &.orange{
+            background: $orange;
+            @include square(2);
+        }
+
+        &.yellow{
+            background: $yellow;
+            @include square(3);
+        }
+
+        &.green{
+            background: $green;
+            @include square(4);
+        }
+
+        &.blue{
+            background: $blue;
+            @include square(5);
+        }
+
+        &.indigo{
+            background: $indigo;
+            @include square(6);
+        }
+
+        &.violet{
+            background: $violet;
+            @include square(7);
+        }
+    }
+}
