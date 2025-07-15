@@ -2,27 +2,22 @@ package org.koreait.test;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.koreait.member.entities.Member;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
 @Transactional
 @SpringBootTest
-@ActiveProfiles({"default", "test"})
-public class Ex02 {
+public class Ex03 {
     @PersistenceContext
     private EntityManager em;
 
-    @BeforeEach
-    void init(){
+    @Test
+    void test1() throws Exception{
         Member member = new Member();
-
-        //member.setSeq(1L);
         member.setEmail("user01@test.org");
         member.setPassword("123456789");
         member.setName("user01");
@@ -31,14 +26,20 @@ public class Ex02 {
         em.persist(member);
         em.flush();
         em.clear();
-    }
 
-    @Test
-    void test1(){
-        Member member = em.find(Member.class, 1L);
-        System.out.println(member);
+        member = em.find(Member.class, member.getSeq());
+        Thread.sleep(5000);
 
-        Member member1 = em.find(Member.class, 1L);
-        System.out.println(member1);
+        System.out.println(member.getCreatedAt());
+        System.out.println(member.getModifiedAt());
+
+        member.setName("(수정)user01");
+        em.flush();
+        em.clear();
+
+        member = em.find(Member.class, member.getSeq());
+
+        System.out.println(member.getCreatedAt());
+        System.out.println(member.getModifiedAt());
     }
 }

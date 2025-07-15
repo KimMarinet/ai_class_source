@@ -30,7 +30,7 @@ public class Ex01 {
     void test1(){
         Member member = new Member();
 
-        member.setSeq(1L);
+        //member.setSeq(1L);
         member.setEmail("user01@test.org");
         member.setPassword("123456789");
         member.setName("user01");
