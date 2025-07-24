@@ -46,6 +46,6 @@ public class Member extends BaseEntity {
     private String profileImage;
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, orphanRemoval = true)
     private List<BoardData> items;
 }
